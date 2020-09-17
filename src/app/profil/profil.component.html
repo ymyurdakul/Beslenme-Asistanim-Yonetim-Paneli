@@ -1,0 +1,148 @@
+<mat-card class="shadow m-3">
+    <mat-card-header>
+     </mat-card-header>
+     <mat-card-content>
+      <mat-tab-group mat-align-tabs="center" >
+        <mat-tab label="Kullanıcı Bilgileri" class=" p-2">
+          <div class="d-flex justify-content-center w-100">
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Yonetici Ad</mat-label>
+            <input matInput [(ngModel)]="admin.ad">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Soyad</mat-label>
+            <input matInput [(ngModel)]="admin.soyad">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Sifre</mat-label>
+            <input matInput [(ngModel)]="admin.sifre">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Mail</mat-label>
+            <input matInput [(ngModel)]="admin.mail">
+          </mat-form-field>
+          </div>
+        </mat-tab>
+         <mat-tab label="Detay">
+          <div class="d-flex justify-content-center w-100">
+
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Sehir</mat-label>
+            <input matInput [(ngModel)]="admin.sehir">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>İlçe</mat-label>
+            <input matInput value="Melikgazi">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Mahalle</mat-label>
+            <input matInput value="Köşk">
+          </mat-form-field></div>
+        </mat-tab>
+        <mat-tab label="İletişim">
+          <div class="d-flex justify-content-center w-100">
+
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Web Sitesi</mat-label>
+            <input matInput value="www.mustafayurdakul.net.tc">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Mail Adresi</mat-label>
+            <input matInput value="myyurdakul@gmail.com">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="m-2">
+            <mat-label>Mail Adresi 2</mat-label>
+            <input matInput value="myyurdakul2@gmail.com">
+          </mat-form-field></div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-stroked-button (click)="updateAdmin()" >Kaydet</button>
+    </mat-card-actions>
+
+</mat-card>
+  <mat-divider></mat-divider>
+<mat-card class="shadow m-3">
+    <mat-card-header  class="d-flex justify-content-end">
+      <button mat-stroked-button class="float-right" (click)="visibleNew=!visibleNew" >Yeni Yönetici Kaydı</button>
+
+    </mat-card-header>
+
+
+</mat-card>
+<mat-card *ngIf="visibleNew" class="m-3 ">
+    <mat-card-header>
+        <mat-card-title>Yeni Yönetici</mat-card-title>
+        <mat-card-subtitle>Form</mat-card-subtitle>
+    </mat-card-header>
+     <mat-card-content>
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Kullanıcı Bilgileri</ng-template>
+            <div class="d-flex justify-content-around flex-column">
+              <mat-form-field>
+                <mat-label>Ad</mat-label>
+                <input matInput placeholder="Adınız" #ad formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Soyad</mat-label>
+                <input matInput placeholder="Soyadınız" #soyad formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Mail</mat-label>
+                <input matInput placeholder="asd@example.com" #mail formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Şifre</mat-label>
+                <input matInput placeholder="123132" type="password" #sifre formControlName="firstCtrl" required>
+              </mat-form-field>
+            </div>
+
+            <div class="d-block ">
+              <button mat-button matStepperNext class="float-right">Devam</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" optional>
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Detay Bilgiler</ng-template>
+            <mat-form-field class="w-100 d-block">
+              <mat-label>Sehir</mat-label>
+              <input matInput name="a_Sehir" #sehir   formControlName="secondCtrl" placeholder="Yozgat"
+                     required >
+            </mat-form-field>
+
+            <mat-form-field class="w-100 d-block">
+              <mat-label>İlçe</mat-label>
+              <input matInput    formControlName="secondCtrl" placeholder="Melikgazi"
+                     required >
+            </mat-form-field>
+            <mat-form-field class="w-100 d-block">
+              <mat-label>Mahalle</mat-label>
+              <input matInput    formControlName="secondCtrl" placeholder="Cumhuriyet"
+                     required >
+            </mat-form-field>
+            <div class="d-block ">
+              <button mat-button matStepperPrevious class="float-right">Geri</button>
+              <button mat-button matStepperNext class="float-right" >İleri</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step >
+          <ng-template matStepLabel>Tamamla</ng-template>
+          <div class="d-flex justify-content-end">
+
+            <button mat-button matStepperPrevious>Geri</button>
+            <button mat-button (click)="stepper.reset()">Sıfırla</button>
+            <button mat-button (click)="save(ad.value,soyad.value,mail.value,sifre.value,sehir.value)">Kaydet</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+
+
+    </mat-card-content>
+
+</mat-card>
+

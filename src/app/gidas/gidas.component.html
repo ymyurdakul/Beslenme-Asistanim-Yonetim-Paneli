@@ -1,0 +1,91 @@
+<div class="card shadow m-3 ">
+
+</div>
+<div class="card   shadow m-3">
+  <div class="card-header bg-white text-left">
+    Gıdalar
+    <br>
+    <mat-form-field class="w-100"  appearance="outline">
+      <mat-label>Ara...</mat-label>
+      <input matInput (keyup)="applyFilter($event)">
+      <mat-icon matSuffix>search</mat-icon>
+
+    </mat-form-field>
+  </div>
+  <div class="card-body">
+<table mat-table [dataSource]="dataSource" matSort  class="   m-0   w-100" id="table">
+
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="ad">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ad </th>
+    <td mat-cell *matCellDef="let element"> {{element.ad}} </td>
+  </ng-container>
+  <ng-container matColumnDef="kalori">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kalori </th>
+    <td mat-cell *matCellDef="let element"> {{element.kalori}} </td>
+  </ng-container>
+  <ng-container matColumnDef="karbonhidrat">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Karbonhidrat </th>
+    <td mat-cell *matCellDef="let element"> {{element.karbonhidrat}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lif">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Lif </th>
+    <td mat-cell *matCellDef="let element"> {{element.lif}} </td>
+  </ng-container>
+
+ <!-- Position Column -->
+ <ng-container matColumnDef="protein">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Protein </th>
+  <td mat-cell *matCellDef="let element"> {{element.protein}} </td>
+</ng-container>
+<ng-container matColumnDef="yag">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Yağ </th>
+  <td mat-cell *matCellDef="let element"> {{element.yag}} </td>
+</ng-container>
+<ng-container matColumnDef="kolestrol">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Kolestrol </th>
+  <td mat-cell *matCellDef="let element"> {{element.kolestrol}} </td>
+</ng-container>
+
+<ng-container matColumnDef="aVitamini">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> A Vitamini </th>
+  <td mat-cell *matCellDef="let element"> {{element.aVitamini}} </td>
+</ng-container>
+
+
+ <!-- Position Column -->
+ <ng-container matColumnDef="cVitamini">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> C Vitamini </th>
+  <td mat-cell *matCellDef="let element"> {{element.cVitamini}} </td>
+</ng-container>
+<ng-container matColumnDef="potasyum">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Potasyum </th>
+  <td mat-cell *matCellDef="let element"> {{element.potasyum}} </td>
+</ng-container>
+<ng-container matColumnDef="kalsiyum">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Kalsiyum </th>
+  <td mat-cell *matCellDef="let element"> {{element.kalsiyum}} </td>
+</ng-container>
+
+<ng-container matColumnDef="demir">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Demir </th>
+  <td mat-cell *matCellDef="let element"> {{element.demir}} </td>
+</ng-container>
+<ng-container matColumnDef="action">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Göster </th>
+  <td mat-cell *matCellDef="let element">
+  <button mat-icon-button (click)="showImage(element)" >
+     <mat-icon>menu</mat-icon>
+  </button>
+  </td>
+</ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[7, 15, 27]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

@@ -1,0 +1,89 @@
+<mat-card class="example-card">
+    <mat-card-header class="d-flex justify-content-center">
+       <mat-card-subtitle>{{kullanici.ad.toUpperCase() +" "}}{{kullanici.soyad.toUpperCase()}}</mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+       <div class="row">
+         <div class="col-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Kullanıcı Id</mat-label>
+            <input matInput disabled value={{kullanici.id}}>
+          </mat-form-field>
+         </div>
+         <div class="col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Doğum Tarihi</mat-label>
+            <input matInput disabled value={{kullanici.dogumTarihi}}>
+          </mat-form-field>
+         </div>
+
+       </div>
+
+       <div class="row">
+         <div class="col-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Mevcut Kilo</mat-label>
+            <input matInput disabled value={{kullanici.mevcutKilo}}>
+          </mat-form-field>
+         </div>
+         <div class="col-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Hedef Kilo</mat-label>
+            <input matInput disabled value={{kullanici.hedefKilo}}>
+          </mat-form-field>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Cinsiyeti</mat-label>
+            <input matInput disabled value={{toCinsiyet(kullanici.cinsiyet)}}>
+          </mat-form-field>
+         </div>
+         <div class="col-6">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput disabled value={{kullanici.email}}>
+          </mat-form-field>
+         </div>
+       </div>
+
+       <div class="row">
+        <div class="col-6">
+         <mat-form-field class="example-full-width">
+           <mat-label>Aktiflik Seviyesi</mat-label>
+           <input matInput disabled value={{kullanici.aktiflikSeviyesi}}>
+         </mat-form-field>
+        </div>
+        <div class="col-6">
+         <mat-form-field class="example-full-width">
+           <mat-label>Hedefi</mat-label>
+           <input matInput disabled value={{kullanici.hedef}}>
+         </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+         <mat-form-field class="example-full-width">
+           <mat-label>Boy</mat-label>
+           <input matInput disabled value={{kullanici.boy}}>
+         </mat-form-field>
+        </div>
+        <div class="col-6">
+         <mat-form-field class="example-full-width">
+           <mat-label>Şifre</mat-label>
+           <input matInput disabled value={{kullanici.sifre}}>
+         </mat-form-field>
+        </div>
+      </div>
+
+
+
+
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-end">
+      <button mat-button  [mat-dialog-close]="kullanici">Kapat</button>
+
+     </mat-card-actions>
+  </mat-card>

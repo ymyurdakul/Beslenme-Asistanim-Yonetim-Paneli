@@ -1,0 +1,130 @@
+<form  #form="ngForm">
+<mat-card class="example-card">
+  <mat-card-header class="d-flex justify-content-center">
+    </mat-card-header>
+   <mat-card-content>
+     <div class="row">
+       <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Kullanıcı Ad</mat-label>
+          <input matInput name="k_ad"  required [(ngModel)]="kullanici.ad" minlength="3">
+        </mat-form-field>
+       </div>
+       <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Kullanıcı Soyad</mat-label>
+          <input matInput   name="k_soyad"  required [(ngModel)]="kullanici.soyad" minlength="3"  >
+        </mat-form-field>
+       </div>
+
+
+     </div>
+
+     <div class="row">
+       <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Mevcut Kilo</mat-label>
+          <input matInput type="number"  name="k_mkilo"  required [(ngModel)]="kullanici.mevcutKilo" min="20" max="200"  >
+        </mat-form-field>
+       </div>
+       <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Hedef Kilo</mat-label>
+          <input matInput   name="k_hKilo" type="number" required [(ngModel)]="kullanici.hedefKilo" min="20" max="200" >
+        </mat-form-field>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-6">
+        <mat-form-field appearance="" class="w-100">
+          <mat-label>Cinsiyet</mat-label>
+          <mat-select   name="food" [(ngModel)]="kullanici.cinsiyet">
+            <mat-option value="true">
+             Erkek
+            </mat-option>
+            <mat-option value="false" selected>
+              Kadın
+             </mat-option>
+          </mat-select>
+        </mat-form-field>
+       </div>
+       <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput  type="email" name="e_mail" required [(ngModel)]="kullanici.email">
+        </mat-form-field>
+       </div>
+     </div>
+
+     <div class="row">
+      <div class="col-6">
+        <mat-form-field appearance="" class="w-100">
+          <mat-label>Aktiflik Seviyesi</mat-label>
+          <mat-select   name="seviye" [(ngModel)]="kullanici.aktiflikSeviyesi">
+            <mat-option value="Aktif">
+             Aktif
+            </mat-option>
+            <mat-option value="Az Hareketli" >
+              Az Hareketli
+             </mat-option>
+             <mat-option value="Hareketli" >
+               Hareketli
+             </mat-option>
+             <mat-option value="Çok Hareketli" >
+              Çok Hareketli
+             </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="" class="w-100">
+          <mat-label>Hedef</mat-label>
+          <mat-select   name="hedef" [(ngModel)]="kullanici.hedef">
+            <mat-option value="Kilo Almak">
+              Kilo Almak
+            </mat-option>
+            <mat-option value=" Kilo Korumak" >
+              Kilo Korumak
+             </mat-option>
+             <mat-option value="Kilo Vermek" >
+              Kilo Vermek
+             </mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+       <mat-form-field class="example-full-width">
+         <mat-label>Boy</mat-label>
+         <input matInput name="k_boy" required [(ngModel)]="kullanici.boy">
+       </mat-form-field>
+      </div>
+      <div class="col-6">
+       <mat-form-field class="example-full-width">
+         <mat-label>Şifre</mat-label>
+         <input matInput name="k_sifre" required [(ngModel)]="kullanici.sifre" >
+       </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <mat-label>Dogum Tarihi</mat-label>
+          <input matInput type="date" required class="w-100 d-block form-control" name="k_date" [(ngModel)]="kullanici.dogumTarihi">
+        </mat-form-field>
+
+       </div>
+     </div>
+
+  </mat-card-content>
+  <mat-card-actions class="d-flex justify-content-end">
+    <button mat-stroked-button (click)="showData()" [disabled]="form.invalid" [mat-dialog-close]="kullanici"  >Kaydet</button>
+
+   </mat-card-actions>
+</mat-card>
+</form>
