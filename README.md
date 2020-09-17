@@ -1,5 +1,6 @@
 # Beslenme-Asistan İsimli Mobil Uygulamanın Kontrol ve takibinin yapıldığı web projem.
 Beslenme Asistanım: https://play.google.com/store/apps/details?id=yurdakul.beslenmeasistanm
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/35013722/93461151-0438f280-f8ed-11ea-8e2c-05bf421cf0f0.gif)
 
 ![1](https://user-images.githubusercontent.com/35013722/93459792-f1bdb980-f8ea-11ea-84bd-8564db0cf31e.PNG)
 ![2](https://user-images.githubusercontent.com/35013722/93459797-f3877d00-f8ea-11ea-8067-72b197439f04.PNG)
@@ -17,4 +18,3 @@ Beslenme Asistanım: https://play.google.com/store/apps/details?id=yurdakul.besl
 ![14](https://user-images.githubusercontent.com/35013722/93459840-039f5c80-f8eb-11ea-88ae-e5d9aff66793.PNG)
 ![15](https://user-images.githubusercontent.com/35013722/93459769-e8cce800-f8ea-11ea-9ee8-8bae00e8fa2d.PNG)
 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/35013722/93461151-0438f280-f8ed-11ea-8e2c-05bf421cf0f0.gif)
